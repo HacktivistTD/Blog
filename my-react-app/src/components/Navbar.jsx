@@ -7,12 +7,13 @@ import Col from 'react-bootstrap/Col';
 
 function Header() {
   return (
+    < div className='py-0 xl:py-12'>
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="/">
           <img 
             className="d-inline-block align-top"
-            src='1.png'
+            src='/1.png'
             alt="logo"
             style={{ height: '100px' }}
           />
@@ -30,6 +31,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </div>
   );
 }
 

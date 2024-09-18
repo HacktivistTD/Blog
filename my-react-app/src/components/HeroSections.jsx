@@ -6,17 +6,18 @@ const HeroSection = () => {
     <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
       <div>
         <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
-          Better every day
+        සාහිත්‍ය මාසය වෙනුවෙන් නිකුත් කරන ලද ලිපි 
         </span>
         <h3 className="text-4xl md:text-6xl font-semibold">
-          Let's change it up a bit
+        සාහිත්‍යය
         </h3>
         <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis in
-          error repellat voluptatibus ad.
+        භාෂාව උපයෝග කර ගනිමින් රසය ජනනය කරන කලාව, සාහිත්‍යය ලෙස හැඳින්වෙයි."සමාන හදවත" යන්න සාහිත්‍යය යන වචනයෙන් අදහස් වෙයි.
+         එය හුදෙක් භාෂා වික්‍රමයක් පමණක් නොව මානව ජීවිතයේ විවිධ පැතිකඩ නිරූපණය කරන මාධ්‍යයකි. සාහිත්‍යය නිර්මාණය, රස වින්දනය හා විචාරය යන ක්ෂේත්‍ර තුනකින් සමන්විත බව ඇතැම් විචාරකයෝ පවසති. රස වින්දනය සාහිත්‍යය පරිශීලනයෙන් ලැබිය හැකි ප්‍රතිලාභයකි.[1] සාහිත්‍යය යන්නට නොයෙකුත් විවරණ ඇත. එම විවරණ සාහිත්‍යය භාවිතා කරන්නන් මත හා එහි අන්තර්ගතය මත රඳා පවතී. එය පුළුල් ලෙස සලකා බලන විට ඕනෑම රූ සටහනක සිට අක්ෂර දක්වා ඕනෑම සංකේතයක් අඩංගු වන වාර්තාවක් ලෙස දැක්විය හැක. පටු දැක්මකින් යුතුව බලන කළ එය අක්ෂර පමණක් හෝ අක්ෂර සංකේත වශයෙන් ඇති ඕනෑම ලිඛිත භාෂාවකින් යුත් වාර්තාවක් ලෙස පෙනිය හැකිය. (උදාහරණ ලෙස ඊජිප්තු) එසේම පටු දෘෂ්ඨියකින් සලකා බලන කළ සාහිත්‍යමය කෘතියක් යන්න භෞතිකමය ස්වභාවයක් සහිත වන්නක් බව සැලකේ. මුස්ලිම් දාර්ශනික ඉමාම් ජෆා අල් සදික්ගේ (ක්‍රි. ව. 702 - 756) අර්ථ දැක්විම් වලට අනුව සාහිත්‍යය යන්න පහත පරිදි වේ. සාහිත්‍යය යනු යමෙකු විසින් අඳිනු ලබන වස්ත්‍රයක් වැනිය. යමකු පවසන හෝ ලියා දක්වන දෙයින් එය තවත් සිත්ගන්නා සුළු වේ. ෆැගිලියෝ මුයිගි පවසන පරිදි සාහිත්‍යය යනු යම් මඟ පෙන්වීමක් සහ අර්ථයක් කැටි කළ ජීවිතයේ එක් පැතිකඩකි. එය අර්ථ දක්වන්නන්ගේ දැකීමට අනුව ලෝකය පිළිබඳ අර්ථ දැක්වීමකි.
+         එහෙත් සාහිත්‍යයට අඩංගු වන්නා වූ ලියවිලි නිරතුරුවම මෙම සීමා පසු කරයි.
         </p>
-        <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
-          Find a class
+        <button className="bg-yellow-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-yellow-600 active:scale-95">
+          For More Details 
         </button>
       </div>
       <ShuffleGrid />

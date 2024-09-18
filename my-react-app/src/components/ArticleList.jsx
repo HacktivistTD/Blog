@@ -1,70 +1,49 @@
-// src/components/ArticleList.jsx
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 
 function ArticleList() {
-  const { category } = useParams();  // Get the category from URL
+  const { category } = useParams(); // Get the category from URL
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const fetchArticles = async () => {
       const q = query(collection(db, "articles"), where("category", "==", category));
       const querySnapshot = await getDocs(q);
-      setArticles(querySnapshot.docs.map(doc => doc.data()));
+      setArticles(querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+        createdAt: doc.data().createdAt?.toDate(),  // Convert Firebase Timestamp to JS Date
+      })));
     };
 
     fetchArticles();
   }, [category]);
 
   return (
-    <div style={styles.container}>
-      <h2 style={styles.heading}>{category} Articles</h2>
-      {articles.length ? (
-        articles.map((article, index) => (
-          <div key={index} style={styles.card}>
-            <h3 style={styles.title}>{article.title}</h3>
-            <p style={styles.content}>{article.content}</p>
-          </div>
-        ))
-      ) : (
-        <p>No articles found.</p>
-      )}
+    <div className="flex flex-col items-center p-8 gap-6">
+      <h2 className="text-3xl font-semibold mb-4">{category} Articles</h2>
+      <div className="flex gap-5 flex-wrap justify-center">
+        {articles.length ? (
+          articles.map((article, index) => (
+            <div
+              key={index}
+              className="border border-gray-600 rounded-lg p-4 w-50 text-center bg-gray-700 shadow-md transition-transform transform hover:scale-105"
+            >
+              <h3 className="text-xl font-bold mb-2 text-white">{article.title}</h3>
+              <p className="text-white mb-2">{article.content}</p>
+              <p className="text-yellow-400 text-sm">
+                {article.createdAt ? article.createdAt.toLocaleDateString() : "Date not available"}
+              </p>
+            </div>
+          ))
+        ) : (
+          <p className="text-gray-500">No articles found.</p>
+        )}
+      </div>
     </div>
   );
 }
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '2rem',
-    gap: '1rem',
-  },
-  heading: {
-    marginBottom: '1rem',
-    fontSize: '2rem',
-  },
-  card: {
-    border: '1px solid #ddd',
-    borderRadius: '10px',
-    padding: '1rem',
-    width: '300px',
-    textAlign: 'center',
-    backgroundColor: '#f9f9f9',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-    transition: 'transform 0.3s',
-  },
-  title: {
-    margin: '0 0 0.5rem 0',
-    fontSize: '1.5rem',
-  },
-  content: {
-    margin: '0',
-    fontSize: '1rem',
-  },
-};
 
 export default ArticleList;
